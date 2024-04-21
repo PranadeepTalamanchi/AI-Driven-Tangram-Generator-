@@ -23,7 +23,7 @@ def load_tangram_data(data_dir):
 
 
 # Preprocess the data
-tangram_data = load_tangram_data("C:/Users/prana/Desktop/tangram/")
+tangram_data = load_tangram_data("tangram/")
 
 tfidf = TfidfVectorizer(analyzer='word', ngram_range=(1, 2), min_df=1, stop_words='english')
 tfidf_matrix = tfidf.fit_transform(tangram_data['Word'])
