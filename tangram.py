@@ -1,3 +1,4 @@
+#This is sample demo code for few word inputs, you can use this code before using whole project in your local system.
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
