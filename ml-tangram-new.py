@@ -1,4 +1,3 @@
-
 import os
 import pandas as pd
 import tkinter as tk
@@ -23,7 +22,7 @@ def load_tangram_data(data_dir):
 
 
 # Preprocess the data
-tangram_data = load_tangram_data("tangram/")
+tangram_data = load_tangram_data("C:/Users/prana/Desktop/tangram/")
 
 tfidf = TfidfVectorizer(analyzer='word', ngram_range=(1, 2), min_df=1, stop_words='english')
 tfidf_matrix = tfidf.fit_transform(tangram_data['Word'])
@@ -64,17 +63,17 @@ def render_image(tangram):
 def create_ui():
     root = tk.Tk()
     root.title("Tangram Recommender")
-    root.geometry("400x600")
-    root.configure(bg="black")
+    root.geometry("1920x1080")
+    root.configure(bg="lightcyan")
     # # Background image
     # background_image = Image.open("C:/Users/prana/Desktop/zo.jpg")  # Replace "background_image.jpg" with your image path
-    # background_image = background_image.resize((2060, 600), Image.LANCZOS)
+    # background_image = background_image.resize((1920, 1080), Image.LANCZOS)
     # photo = ImageTk.PhotoImage(background_image)
     # background_label = tk.Label(root, image=photo)
     # background_label.image = photo
     # background_label.place(x=0, y=0, relwidth=1, relheight=1)
     # Title
-    title_label = tk.Label(root, text="AI-Driven Tangram Generator 🎨", font=("Helvetica", 20, "bold"), fg="white", bg="black")
+    title_label = tk.Label(root, text="AI-Driven Tangram Generator 🎨", font=("Helvetica", 20, "bold"), fg="black",bg="lightcyan")
     title_label.place(relx=0.5, rely=0.05, anchor="center")
 
     # Input box
@@ -84,12 +83,12 @@ def create_ui():
     entry.place(relx=0.5, rely=0.15, anchor="center")
 
     # Example words
-    example_words_label = tk.Label(root, text="Example words: horse, swan, chicken, cat1, house2, dog, fish, rabbit, boat", font=("Helvetica", 12), fg="black")
-    example_words_label.place(relx=0.5, rely=0.2, anchor="center")
+    # example_words_label = tk.Label(root, text="Example words: horse, swan, chicken, cat1, house2, dog, fish, rabbit, boat", font=("Helvetica", 12), fg="black")
+    # example_words_label.place(relx=0.5, rely=0.2, anchor="center")
 
     # Button
-    button = tk.Button(root, text="Generate Tangram", command=on_click, font=("Helvetica", 14), fg="black", bg="white")
-    button.place(relx=0.5, rely=0.28, anchor="center")
+    button = tk.Button(root, text="Generate Tangram", command=on_click, font=("Helvetica", 14), fg="black", bg="papayawhip")
+    button.place(relx=0.5, rely=0.23, anchor="center")
 
     # Load and display an image
     default_image = tangram_data.iloc[0]  # Using the first image in the dataset as default
@@ -99,7 +98,7 @@ def create_ui():
     global img
     img = tk.Label(root, image=render)
     img.image = render
-    img.place(relx=0.5, rely=0.48, anchor="center")
+    img.place(relx=0.5, rely=0.44, anchor="center")
 
     # # Generated Tangram
     # tangram_label = tk.Label(root, text="Generated Tangram", font=("Helvetica", 16, "bold"), fg="#333", bg="#ffc107")
